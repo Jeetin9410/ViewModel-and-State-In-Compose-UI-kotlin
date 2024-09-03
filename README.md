@@ -18,7 +18,6 @@ This code demonstrates the Android Architecture component- ViewModel and StateFl
 2. **UI State:**
 The UI is what the user sees, and the UI state is what the app says they should see. The UI is the visual representation of the UI state. Any changes to the UI state immediately are reflected in the UI.
 
-                                                                 ![UIState](images/img.png)
 
 4. **Immutability** : Immutable objects provide guarantees that multiple sources do not alter the state of the app at an instant in time. This protection frees the UI to focus on a single role: reading state and updating UI elements accordingly. Therefore, you should never modify the UI state in the UI directly, unless the UI itself is the sole source of its data. Violating this principle results in multiple sources of truth for the same piece of information, leading to data inconsistencies and subtle bugs.
    Example : 
@@ -68,7 +67,9 @@ As another example, say that you want the app data to be private to the ViewMode
 **5. Unidirectional data flow :**
 A unidirectional data flow (UDF) is a design pattern in which state flows down and events flow up. By following unidirectional data flow, you can decouple composables that display state in the UI from the parts of your app that store and change state.
 
-    ![UDF](images/img_1.png)
+<img src="/images/img_1.png" alt="Image 1" height="500"/>
+
+    
 
     The use of the UDF pattern for app architecture has the following implications:
     
