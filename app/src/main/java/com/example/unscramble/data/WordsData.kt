@@ -19,6 +19,8 @@ package com.example.unscramble.data
 const val MAX_NO_OF_WORDS = 10
 const val SCORE_INCREASE = 20
 
+//Strings are hardcoded in this app for simplicity and to enable you to focus on the app architecture.
+
 // Set with all the words for the Game
 val allWords: Set<String> =
     setOf(
