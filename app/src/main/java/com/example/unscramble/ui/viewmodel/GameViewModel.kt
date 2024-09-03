@@ -1,5 +1,8 @@
 package com.example.unscramble.ui.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.unscramble.data.allWords
 import com.example.unscramble.ui.model.GameStateUi
@@ -43,12 +46,10 @@ class GameViewModel : ViewModel() {
 
      */
 
-    init {
-        resetGame()
-    }
+
 
     private lateinit var currentWord: String
-    private var usedWords: MutableSet<String> = mutableSetOf()
+    var usedWords: MutableSet<String> = mutableSetOf()
 
     private fun pickRandomWordAndShuffle(): String {
         // Continue picking up a new random word until you get one that hasn't been used before
@@ -74,5 +75,16 @@ class GameViewModel : ViewModel() {
     fun resetGame() {
         usedWords.clear()
         _uiState.value = GameStateUi(currentScrambledWord = pickRandomWordAndShuffle())
+    }
+
+    var userGuess by mutableStateOf("")
+        private set
+
+    fun updateUserGuess(guessedWord: String){
+        userGuess = guessedWord
+    }
+
+    init {
+        resetGame()
     }
 }
